@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero {
+    text-align: center;
+}
+
+.hero img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    margin-bottom: 30px;
+}
+
+.hero .links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.hero .links a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #FF0000;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.hero .links a:hover {
+    background-color: #990000;
+    transform: scale(1.1);
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 80%; /* Adjust width as needed */
+}
+
+.player .song-info {
+    margin-bottom: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.player .song-info h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.locked-song, .unlocked-song {
+    width: 100%;
+    height: 50px;
+    background-color: #333;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    cursor: not-allowed;
+    margin-bottom: 10px;
+}
+
+.unlocked-song {
+    cursor: pointer;
+    background-color: #444;
+    color: #fff;
+    justify-content: center;
+}
