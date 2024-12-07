@@ -5,63 +5,390 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novaero - Phantom's Promise</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #222;
+            color: #fff;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        
+        .hero p {
+            color: #888;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            background-color: #fafafa;
+            color: #000000;
+            border-color: #FF0000; 
+            padding: 8px;
+            border-radius: 10%;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .social-links a:hover {
+            background-color: #FF0000;
+            border-color: #eeeeee; 
+        }
+
+
+        .player {
+            background-color: #111;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            width: 350px;
+        }
+
+        .album-art {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+        }
+
+        .album-art img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .song-info {
+            margin-bottom: 15px;
+        }
+
+        .song-info h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .song-info p {
+            margin: 5px 0 0;
+            color: #aaa;
+        }
+
+        .playlist {
+            list-style: none;
+            padding: 0;
+            width: 235px;
+        }
+
+        .song-item {
+            padding: 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .song-item:hover {
+            background-color: #FF0000; /* Red on hover */
+        }
+
+        .song-item {
+            display: flex; /* Use flexbox for better alignment */
+            justify-content: space-between; /* Space title and duration */
+        }
+
+        .song-duration {
+            margin-left: 10px; /* Adjust spacing as needed */
+            color: #aaa; 
+        }
+        
+        .active {
+            background-color: #444; 
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .controls button {
+            background-color: #333;
+            color: #fff;
+            outline-color: #FF0000; 
+            padding: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.2s ease; /* Add transition effect */
+        }
+
+        .controls button:hover {
+            background-color: #FF0000; /* Change background color on hover */
+        }
+
+        .download{
+            display: flex;
+            justify-content: center;
+        }
+
+        .download a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .download a:hover {
+            background-color: darkred;
+        }
+
+        #prevBtn::before {
+            content: "\25C0"; /* Unicode for left arrow */
+        }
+
+        #playBtn::before {
+            content: "\25BE"; /* Unicode for play/pause symbol */ 
+        }
+
+        #nextBtn::before {
+            content: "\25B6"; /* Unicode for right arrow */
+        }
+       
+        .spinning-image {
+            animation: spin 20s linear infinite;
+        }
+
+        .download ul {
+            list-style-type: none; /* Remove default bullet points */
+            padding: 0; /* Reset default padding */
+            margin: 0; /* Reset default margin */
+        }
+
+        .download ul li {
+            margin-bottom: 5px; /* Add spacing between list items */
+        }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .reset-animation {
+        animation-iteration-count: 1; /* Reset the animation */
+    }
+    </style>
 </head>
 <body>
-
+    
     <main>
         <section class="hero">
             <img src="Cover Art.jpg" alt="Phantom's Promise Album Cover">
             <h2>Phantom's Promise</h2>
-            <p>Out Now!</p>
-            <div class="links">
-                <a href="https://www.youtube.com/watch?v=uJqPv3sHEsw&list=PL56-S61LHqCBp0tlRalsP0beYeXF5PEOe&pp=gAQB">YouTube</a>
-                <a href="https://music.youtube.com/playlist?list=PL56-S61LHqCBp0tlRalsP0beYeXF5PEOe">YouTube Music</a>
-                <a href="https://audiomack.com/novaero2027/album">Stream on Audiomack</a>
-                <a href="https://soundcloud.com/novaeroofficial/sets/phantoms-promise?si=3120a8e8cfc745adb133713f75c520d4&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">Stream on SoundCloud</a>
-            </div>
+            <p>Get lost in the alluring melodies of <i>Phantom's Promise</i></p>
+            
+            <div class="download">
+                <ul>
+                  <li><a href="https://www.youtube.com/watch?v=uJqPv3sHEsw&list=PL56-S61LHqCBp0tlRalsP0beYeXF5PEOe&pp=gAQB">YouTube</a></li>
+                  <li><a href="https://music.youtube.com/playlist?list=PL56-S61LHqCBp0tlRalsP0beYeXF5PEOe">YouTube Music</a></li>
+                  <li><a href="https://audiomack.com/novaero2027/album">Stream on Audiomack</a></li>
+                  <li><a href="https://soundcloud.com/novaeroofficial/sets/phantoms-promise?si=3120a8e8cfc745adb133713f75c520d4&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">Stream on SoundCloud</a></li>
+                </ul>
+              </div>
         </section>
 
-        <section class="player">
-            <audio id="song1" src="./1. Intro.mp3" controls></audio>
-            <div class="song-info">
-                <h3>Intro (prod. Novaero)</h3>
-            </div>-->
+        <br>
+        <div class="player">
+            <div class="album-art">
+                <img src="Cover Art.jpg" alt="Album Cover" class="spinning-image"> 
+            </div>
 
-            <div class="player-controls">
-                <audio id="song1" src="./1. Intro.mp3" controls></audio>
-                <div class="song-info">
-                    <h3>Intro (prod. Novaero)</h3>
+            <div class="audio-player">
+                <div class="controls">
+                    <button id="prevBtn"></button>
+                    <button id="playBtn"></button> 
+                    <button id="nextBtn"></button>
                 </div>
-                <div class="locked-songs">
-                    <div class="locked-song">
-                        <p>Coming Soon</p>
-                    </div>
-                    <div class="locked-song">
-                        <p>Coming Soon</p>
-                    </div>
-                    </div>
+            <div>
+            
+            <div class="audio-player">
+                <audio id="audioPlayer" preload="auto"></audio>
+                <div class="song-info">
+                    <h3 id="song-title"></h3>
+                    <p id="song-artist"></p>
+                </div>
+            </div>
+    
+            <ol id="playlist" class="playlist">
+                <li class="song-item" data-src="./1. Intro.mp3" data-title="Intro" data-artist="Novaero">1. Intro<span class="song-duration"></span></li>
+                <li class="song-item" data-src="./2. Prayer Warrior ll.mp3" data-title="Prayer Warrior ll" data-artist="Novaero">2. Prayer Warrior ll<span class="song-duration"></span></li>
+                <li class="song-item" data-src="./3. The Lover of My Life.mp3" data-title="The Lover of My Life" data-artist="Novaero">3. The Lover of My Life<span class="song-duration"></span></li>
+                <li class="song-item" data-src="./4. Cleopatra's Stone.mp3" data-title="Cleopatra's Stone" data-artist="Novaero">4. Cleopatra's Stone<span class="song-duration"></span></li>
+                <li class="song-item" data-src="./5. Mistral's Tears.mp3" data-title="Mistral's Tears" data-artist="Novaero">5. Mistral's Tears<span class="song-duration"></span></li>
+                <li class="song-item" data-src="./6. Lira Triada.mp3" data-title="Lira Triada" data-artist="Novaero">6. Lira Triada<span class="song-duration"></span></li>
+                <li class="song-item" data-src="./7. Asa's Sceptre.mp3" data-title="Asa's Sceptre" data-artist="Novaero">7. Asa's Sceptre<span class="song-duration"></span></li>
+            </ol>
+        </div>
+
+        <br>
+        <div class="download">
+            <a href="./Phantom's Promise.pdf" download="Phantoms-Promise.pdf">Download Book</a>
+        </div>
+
+        <section class="hero">
+            <div class="social-links">
+                <a href="https://www.instagram.com/novaero_official/">Instagram</a>
+                <a href="https://www.facebook.com/profile.php?od=61563615598508" style="margin-left: 35px;">Facebook</a>
             </div>
         
-            <div class="locked-song">
-                <p>Coming Soon</p>
-            </div>
-            <div class="locked-song">
-                <p>Coming Soon</p>
-            </div>
-            <div class="locked-song">
-                <p>Coming Soon</p>
-            </div>
-            <div class="locked-song">
-                <p>Coming Soon</p>
-            </div>
-            <div class="locked-song">
-                <p>Coming Soon</p>
-            </div>
-            <div class="locked-song">
-                <p>Coming Soon</p>
-            </div>
+            <p>By Novaero</p>
         </section>
     </main>
+    <script>
+        const playlist = document.getElementById('playlist');
+        const audioPlayer = document.getElementById('audioPlayer');
+        const songTitle = document.getElementById('song-title');
+        const songArtist = document.getElementById('song-artist');
+        const downloadButton = document.getElementById('downloadButton');
+        const songItems = document.querySelectorAll('.song-item');
+        const audio = document.getElementById('audioPlayer');
+        const albumArt = document.querySelector('.spinning-image');
+
+        audio.addEventListener('play', () => {
+            albumArt.style.animationPlayState = 'running';
+        });
+
+        audio.addEventListener('pause', () => {
+            albumArt.style.animationPlayState = 'paused';
+        });
+        
+        songItems.forEach(item => {
+            const audio = new Audio(item.dataset.src);
+            audio.onloadedmetadata = () => {
+                const durationInSeconds = audio.duration;
+                const minutes = Math.floor(durationInSeconds / 60);
+                const seconds = Math.floor(durationInSeconds % 60).toString().padStart(2, '0');
+                const durationString = `${minutes}:${seconds}`;
+                item.querySelector('.song-duration').textContent = durationString;
+            };
+        });
+
+        playlist.addEventListener('click', (event) => {
+            if (event.target.tagName === 'LI') {
+                // Remove 'active' class from all list items
+                const allItems = document.querySelectorAll('.song-item');
+                allItems.forEach(item => item.classList.remove('active'));
+
+                // Add 'active' class to the clicked item
+                event.target.classList.add('active');
+
+                const selectedSong = event.target;
+                const songSrc = selectedSong.getAttribute('data-src');
+                const songTitleText = selectedSong.getAttribute('data-title');
+                const songArtistText = selectedSong.getAttribute('data-artist');
+
+                audioPlayer.src = songSrc;
+                audioPlayer.play();
+
+                songTitle.textContent = songTitleText;
+                songArtist.textContent = songArtistText;
+            
+                audioPlayer.onplay = () => {
+                    updateProgressBar(); 
+                };
+
+                // Update progress bar on timeupdate
+                audioPlayer.ontimeupdate = () => {
+                    updateProgressBar();
+                };
+
+                // Update progress bar on ended 
+                audioPlayer.onended = () => {
+                    progressBar.value = 0; // Reset progress bar
+                };
+            }
+        });
+
+        function updateProgressBar() {
+            const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+            progressBar.value = progress;
+        }
+
+        function playSong(index) {
+            const allItems = document.querySelectorAll('.song-item');
+            allItems.forEach(item => item.classList.remove('active'));
+
+            const selectedSong = playlist.children[index];
+            selectedSong.classList.add('active');
+
+            const songSrc = selectedSong.getAttribute('data-src');
+            const songTitleText = selectedSong.getAttribute('data-title');
+            const songArtistText = selectedSong.getAttribute('data-artist');
+
+            audioPlayer.src = songSrc;
+            audioPlayer.play();
+
+            songTitle.textContent = songTitleText;
+            songArtist.textContent = songArtistText;
+            albumArt.classList.remove('spinning-image');
+            albumArt.classList.add('spinning-image');
+        }
+
+        playBtn.addEventListener('click', () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playBtn.textContent = "||"; // Change play button symbol to pause symbol
+            } else {
+                audioPlayer.pause();
+                playBtn.textContent = "▶"; // Change pause button symbol to play symbol
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex - 1 + playlist.children.length) % playlist.children.length;
+            playSong(currentSongIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex + 1) % playlist.children.length;
+            playSong(currentSongIndex);
+        });
+
+        playlist.addEventListener('click', (event) => {
+            if (event.target.tagName === 'LI') {
+                currentSongIndex = Array.from(playlist.children).indexOf(event.target); 
+                playSong(currentSongIndex);
+            }
+        });
+
+        audioPlayer.onplay = () => {
+            updateProgressBar();
+        };
+
+        audioPlayer.ontimeupdate = () => {
+            updateProgressBar();
+        };
+
+        audioPlayer.onended = () => {
+            progressBar.value = 0;
+            nextBtn.click(); // Play the next song automatically
+        };
+
+        // Initial song load (optional)
+        playSong(currentSongIndex); 
+    </script>
 
     <footer>
         <p>&copy; 2024 Novaero</p>
