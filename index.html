@@ -17,7 +17,17 @@
             min-height: 100vh;
             margin: 0;
         }
-        
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            background-color: #222;
+            color: #fff;
+            padding: 10px;
+        }
+
         .hero p {
             color: #888;
             font-size: 16px;
@@ -52,12 +62,14 @@
             padding: 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             width: 350px;
+            margin: 0 auto; 
         }
 
         .album-art {
             width: 150px;
             height: 150px;
             margin-bottom: 20px;
+            margin: 0 auto;    
         }
 
         .album-art img {
@@ -65,10 +77,12 @@
             height: 100%;
             object-fit: cover;
             border-radius: 5px;
+            margin: 0 auto; 
         }
 
         .song-info {
             margin-bottom: 15px;
+            margin: 0 auto; 
         }
 
         .song-info h3 {
@@ -79,12 +93,14 @@
         .song-info p {
             margin: 5px 0 0;
             color: #aaa;
+            margin: 0 auto; 
         }
 
         .playlist {
             list-style: none;
             padding: 0;
             width: 235px;
+            margin: 0 auto; 
         }
 
         .song-item {
@@ -135,6 +151,7 @@
         .download{
             display: flex;
             justify-content: center;
+            margin: 0 auto; 
         }
 
         .download a {
@@ -177,18 +194,6 @@
             margin-bottom: 5px; /* Add spacing between list items */
         }
 
-    @keyframes spin {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
-    .reset-animation {
-        animation-iteration-count: 1; /* Reset the animation */
-    }
     </style>
 </head>
 <body>
@@ -250,7 +255,8 @@
         <section class="hero">
             <div class="social-links">
                 <a href="https://www.instagram.com/novaero_official/">Instagram</a>
-                <a href="https://www.facebook.com/profile.php?od=61563615598508" style="margin-left: 35px;">Facebook</a>
+                <br>
+                <a href="https://www.facebook.com/profile.php?od=61563615598508">Facebook</a>
             </div>
         
             <p>By Novaero</p>
